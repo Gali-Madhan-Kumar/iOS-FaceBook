@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FaceBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="FaceBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,6 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="3iP-So-gKX" firstAttribute="height" secondItem="oNA-tP-H6w" secondAttribute="height" id="573-Bs-mfy"/>
                                     <constraint firstItem="3iP-So-gKX" firstAttribute="top" secondItem="xwo-Ie-gRs" secondAttribute="top" constant="20" symbolic="YES" id="6oP-bo-c17"/>
@@ -97,14 +96,12 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9g-Ou-hip">
                                 <rect key="frame" x="30" y="736" width="150" height="42"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="jPe-pZ-fZA"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xx6-ph-ogV">
                                 <rect key="frame" x="234" y="736" width="150" height="42"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="VIF-Cw-L0p"/>
                                 </constraints>
@@ -149,6 +146,13 @@
                             <constraint firstItem="qsO-3F-qN8" firstAttribute="top" secondItem="eh9-ua-tzi" secondAttribute="bottom" constant="29" id="zP1-m7-iia"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="leftLineView" destination="X9g-Ou-hip" id="hMB-Zy-6et"/>
+                        <outlet property="loginButton" destination="eC2-HN-dN9" id="0w0-PW-Ewa"/>
+                        <outlet property="registerButton" destination="qsO-3F-qN8" id="ChL-PM-6Ot"/>
+                        <outlet property="rightLineView" destination="xx6-ph-ogV" id="002-1f-5zR"/>
+                        <outlet property="textFieldsView" destination="xwo-Ie-gRs" id="sap-Ew-OkV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,9 +163,6 @@
         <image name="Cover.png" width="1125" height="693"/>
         <image name="Hands.png" width="1125" height="693"/>
         <image name="WhiteIcon.png" width="248" height="240"/>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9932CC3D25D2CF6A00289331 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9932CC3C25D2CF6A00289331 /* LoginVC.swift */; };
 		99E2240D25D1AA8700674526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2240C25D1AA8700674526 /* AppDelegate.swift */; };
 		99E2240F25D1AA8700674526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2240E25D1AA8700674526 /* SceneDelegate.swift */; };
-		99E2241125D1AA8700674526 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2241025D1AA8700674526 /* ViewController.swift */; };
 		99E2241425D1AA8700674526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E2241225D1AA8700674526 /* Main.storyboard */; };
 		99E2241625D1AA8800674526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E2241525D1AA8800674526 /* Assets.xcassets */; };
 		99E2241925D1AA8800674526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E2241725D1AA8800674526 /* LaunchScreen.storyboard */; };
@@ -19,10 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9932CC3C25D2CF6A00289331 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		99E2240925D1AA8700674526 /* FaceBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E2240C25D1AA8700674526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E2240E25D1AA8700674526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		99E2241025D1AA8700674526 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99E2241325D1AA8700674526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99E2241525D1AA8800674526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E2241825D1AA8800674526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,11 +67,11 @@
 				99E2242225D1ADA600674526 /* WhiteIcon.png */,
 				99E2240C25D1AA8700674526 /* AppDelegate.swift */,
 				99E2240E25D1AA8700674526 /* SceneDelegate.swift */,
-				99E2241025D1AA8700674526 /* ViewController.swift */,
 				99E2241225D1AA8700674526 /* Main.storyboard */,
 				99E2241525D1AA8800674526 /* Assets.xcassets */,
 				99E2241725D1AA8800674526 /* LaunchScreen.storyboard */,
 				99E2241A25D1AA8800674526 /* Info.plist */,
+				9932CC3C25D2CF6A00289331 /* LoginVC.swift */,
 			);
 			path = FaceBook;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99E2241125D1AA8700674526 /* ViewController.swift in Sources */,
 				99E2240D25D1AA8700674526 /* AppDelegate.swift in Sources */,
 				99E2240F25D1AA8700674526 /* SceneDelegate.swift in Sources */,
+				9932CC3D25D2CF6A00289331 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
