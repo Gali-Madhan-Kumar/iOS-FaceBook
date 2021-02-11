@@ -15,11 +15,80 @@ class LoginVC: UIViewController {
     @IBOutlet weak var leftLineView: UIView!
     @IBOutlet weak var rightLineView: UIView!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var handsImageView: UIImageView!
+    
+    // Constraints obj
+    @IBOutlet weak var coverImageView_top: NSLayoutConstraint!
+    @IBOutlet weak var whiteIconImageView_y: NSLayoutConstraint!
+    @IBOutlet weak var handsImageView_top: NSLayoutConstraint!
+    @IBOutlet weak var registerButton_bottom: NSLayoutConstraint!
+    
     
     // executed when the scene is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // executed EVERYTIME when view did appear on the screen
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // declaring notification observation in order to catch UIKeyboardWillShow / UIKeyboardWillHide Notification
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name:  UIResponder.keyboardWillShowNotification, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name:  UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // executed EVERYTIME when view did disappear from the screen
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        // switch off notification center, so it wouldn't in action / running
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // executed always when the Screen's white space (anywhere excluding objects) tapped
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // end editing - hide keyboard
+        self.view.endEditing(false)
+    }
+    
+    // executed once the keyboard is about to be shown
+    @objc func keyboardWillShow(notification: Notification) {
+        
+        // deducting 75px from current Y position (doesn't act till forced)
+        coverImageView_top.constant -= 75
+        handsImageView_top.constant -= 75
+        whiteIconImageView_y.constant += 35
+        
+        // if iOS (app) is able to access the keyboard's frame then change Y position of the register button
+        // let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        // registerButton_bottom.constant += keyboardSize.height
+        
+        // animation function. whatever in the closures below will be animated
+        UIView.animate(withDuration: 0.5) {
+            self.handsImageView.alpha = 0
+            // force to update the layout
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // executed once the keyboard is about to be hidden
+    @objc func keyboardWillHide(notification: Notification) {
+        
+        // adding 75 px from current Y position (doesn't act till forced)
+        coverImageView_top.constant += 75
+        handsImageView_top.constant += 75
+        whiteIconImageView_y.constant -= 35
+        
+        // if iOS (app) is able to access the keyboard's frame then change Y position of the register button
+        // let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        // registerButton_bottom.constant -= keyboardSize.height
+        
+        // animation function. whatever in the closures below will be animated
+        UIView.animate(withDuration: 0.5) {
+            self.handsImageView.alpha = 1
+            // force to update the layout
+            self.view.layoutIfNeeded()
+        }
     }
     
     // executed after aligning the objects

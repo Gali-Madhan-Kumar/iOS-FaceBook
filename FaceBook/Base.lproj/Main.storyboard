@@ -38,7 +38,7 @@
                                             <constraint firstAttribute="height" constant="34" id="KzK-ta-DjV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oNA-tP-H6w">
                                         <rect key="frame" x="8" y="62" width="358" height="34"/>
@@ -147,11 +147,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coverImageView_top" destination="hua-GN-jiK" id="Xxx-i6-xVS"/>
+                        <outlet property="handsImageView" destination="5u1-XY-7Ul" id="Jiy-ps-YNO"/>
+                        <outlet property="handsImageView_top" destination="PDK-oZ-Qp4" id="QYi-Se-ATz"/>
                         <outlet property="leftLineView" destination="X9g-Ou-hip" id="hMB-Zy-6et"/>
                         <outlet property="loginButton" destination="eC2-HN-dN9" id="0w0-PW-Ewa"/>
                         <outlet property="registerButton" destination="qsO-3F-qN8" id="ChL-PM-6Ot"/>
+                        <outlet property="registerButton_bottom" destination="QLJ-kB-Qy0" id="Aoo-xU-stL"/>
                         <outlet property="rightLineView" destination="xx6-ph-ogV" id="002-1f-5zR"/>
                         <outlet property="textFieldsView" destination="xwo-Ie-gRs" id="sap-Ew-OkV"/>
+                        <outlet property="whiteIconImageView_y" destination="E0h-P1-j7H" id="iw9-Zc-6XK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
