@@ -23,10 +23,21 @@ class LoginVC: UIViewController {
     @IBOutlet weak var handsImageView_top: NSLayoutConstraint!
     @IBOutlet weak var registerButton_bottom: NSLayoutConstraint!
     
+    // cache obj
+    var coverImageView_top_cache: CGFloat!
+    var whiteIconImageView_y_cache: CGFloat!
+    var handsImageView_top_cache: CGFloat!
+    var registerButton_bottom_cache: CGFloat!
     
     // executed when the scene is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // caching all values of constraints
+        coverImageView_top_cache = coverImageView_top.constant
+        whiteIconImageView_y_cache =  whiteIconImageView_y.constant
+        handsImageView_top_cache = handsImageView_top.constant
+        registerButton_bottom_cache = registerButton_bottom.constant
     }
     
     // executed EVERYTIME when view did appear on the screen
@@ -60,8 +71,8 @@ class LoginVC: UIViewController {
         whiteIconImageView_y.constant += 35
         
         // if iOS (app) is able to access the keyboard's frame then change Y position of the register button
-        // let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        // registerButton_bottom.constant += keyboardSize.height
+         let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        registerButton_bottom.constant += keyboardSize.height
         
         // animation function. whatever in the closures below will be animated
         UIView.animate(withDuration: 0.5) {
@@ -74,14 +85,11 @@ class LoginVC: UIViewController {
     // executed once the keyboard is about to be hidden
     @objc func keyboardWillHide(notification: Notification) {
         
-        // adding 75 px from current Y position (doesn't act till forced)
-        coverImageView_top.constant += 75
-        handsImageView_top.constant += 75
-        whiteIconImageView_y.constant -= 35
-        
-        // if iOS (app) is able to access the keyboard's frame then change Y position of the register button
-        // let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        // registerButton_bottom.constant -= keyboardSize.height
+        // returning all objects to its initial positions
+        coverImageView_top.constant = coverImageView_top_cache
+        handsImageView_top.constant = handsImageView_top_cache
+        whiteIconImageView_y.constant = whiteIconImageView_y_cache
+        registerButton_bottom.constant = registerButton_bottom_cache
         
         // animation function. whatever in the closures below will be animated
         UIView.animate(withDuration: 0.5) {
