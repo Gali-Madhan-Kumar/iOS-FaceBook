@@ -174,9 +174,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="2070" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PpG-iD-IPL">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpG-iD-IPL">
                                 <rect key="frame" x="0.0" y="0.0" width="2070" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufP-H9-4qk">
                                         <rect key="frame" x="0.0" y="0.0" width="2070" height="896"/>
@@ -197,7 +196,10 @@
                                                             <constraint firstAttribute="height" constant="34" id="bgi-QX-bXn"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <connections>
+                                                            <action selector="textFieldDidChange:" destination="DGp-zG-4Xc" eventType="editingChanged" id="8Gk-zj-nKr"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a combination of atleast six numbers, letters and punctuation marks (like ! and &amp;)." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgp-i5-eeH">
                                                         <rect key="frame" x="20" y="364" width="374" height="36"/>
@@ -206,7 +208,7 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7J-iM-s2m">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7J-iM-s2m">
                                                         <rect key="frame" x="20" y="425" width="374" height="40"/>
                                                         <color key="backgroundColor" red="0.2750532329" green="0.42410057779999999" blue="0.67374020810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -216,6 +218,9 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="passwordContinueButton_clicked:" destination="DGp-zG-4Xc" eventType="touchUpInside" id="fOR-3r-9fj"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -252,6 +257,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDidChange:" destination="DGp-zG-4Xc" eventType="editingChanged" id="E0I-82-p72"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using your real name makes it easier for your friends to recognize you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXC-OH-Txn">
                                                         <rect key="frame" x="20" y="364" width="374" height="36"/>
@@ -260,7 +268,7 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Q8-ua-FJD">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Q8-ua-FJD">
                                                         <rect key="frame" x="20" y="425" width="374" height="40"/>
                                                         <color key="backgroundColor" red="0.2750532329" green="0.42410057779999999" blue="0.67374020810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -270,6 +278,9 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="fullnameContinueButton_clicked:" destination="DGp-zG-4Xc" eventType="touchUpInside" id="fBf-7K-NBi"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfB-hU-aNA">
                                                         <rect key="frame" x="224" y="310" width="170" height="34"/>
@@ -279,6 +290,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDidChange:" destination="DGp-zG-4Xc" eventType="editingChanged" id="Kyn-eb-wrY"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -326,7 +340,7 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heS-zQ-lfU">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heS-zQ-lfU">
                                                         <rect key="frame" x="20" y="408" width="374" height="40"/>
                                                         <color key="backgroundColor" red="0.2750532329" green="0.42410057779999999" blue="0.67374020810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -336,6 +350,9 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="birthdayContinueButton_clicked:" destination="DGp-zG-4Xc" eventType="touchUpInside" id="7c9-8d-fLl"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -420,6 +437,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDidChange:" destination="DGp-zG-4Xc" eventType="editingChanged" id="37t-Sb-7uZ"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You'll use this email when you log in and if you ever need to reset your password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWZ-Wy-WwZ">
                                                         <rect key="frame" x="20" y="366" width="374" height="36"/>
@@ -428,7 +448,7 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBC-4b-42f">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBC-4b-42f">
                                                         <rect key="frame" x="20" y="427" width="374" height="40"/>
                                                         <color key="backgroundColor" red="0.2750532329" green="0.42410057779999999" blue="0.67374020810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -438,6 +458,9 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="emailContinueButton_clicked:" destination="DGp-zG-4Xc" eventType="touchUpInside" id="Ri6-xD-Gjc"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -488,13 +511,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ufP-H9-4qk" firstAttribute="leading" secondItem="BPi-KY-cAw" secondAttribute="leading" id="3rn-VZ-hY5"/>
-                                    <constraint firstItem="ufP-H9-4qk" firstAttribute="trailing" secondItem="BPi-KY-cAw" secondAttribute="trailing" id="YaU-rB-r5G"/>
-                                    <constraint firstItem="ufP-H9-4qk" firstAttribute="bottom" secondItem="BPi-KY-cAw" secondAttribute="bottom" id="ZBe-u8-sri"/>
-                                    <constraint firstItem="ufP-H9-4qk" firstAttribute="top" secondItem="BPi-KY-cAw" secondAttribute="top" id="eYV-SW-OgS"/>
+                                    <constraint firstItem="ufP-H9-4qk" firstAttribute="leading" secondItem="PpG-iD-IPL" secondAttribute="leading" id="3rn-VZ-hY5"/>
+                                    <constraint firstItem="ufP-H9-4qk" firstAttribute="trailing" secondItem="PpG-iD-IPL" secondAttribute="trailing" id="YaU-rB-r5G"/>
+                                    <constraint firstItem="ufP-H9-4qk" firstAttribute="bottom" secondItem="PpG-iD-IPL" secondAttribute="bottom" id="ZBe-u8-sri"/>
+                                    <constraint firstItem="ufP-H9-4qk" firstAttribute="top" secondItem="PpG-iD-IPL" secondAttribute="top" id="eYV-SW-OgS"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="A5v-IS-xXi"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="BPi-KY-cAw"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Epu-ad-mYI">
                                 <rect key="frame" x="0.0" y="776" width="2070" height="120"/>
@@ -522,7 +543,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Epu-ad-mYI" firstAttribute="trailing" secondItem="Zx6-oI-CaU" secondAttribute="trailing" id="17g-S3-bek"/>
+                            <constraint firstItem="PpG-iD-IPL" firstAttribute="trailing" secondItem="Zx6-oI-CaU" secondAttribute="trailing" id="2zS-g6-OZX"/>
+                            <constraint firstItem="PpG-iD-IPL" firstAttribute="leading" secondItem="Zx6-oI-CaU" secondAttribute="leading" id="6ZK-QC-t8d"/>
                             <constraint firstItem="Epu-ad-mYI" firstAttribute="leading" secondItem="Zx6-oI-CaU" secondAttribute="leading" id="BaH-jt-SeR"/>
+                            <constraint firstAttribute="bottom" secondItem="PpG-iD-IPL" secondAttribute="bottom" id="aHw-0J-8k1"/>
+                            <constraint firstItem="PpG-iD-IPL" firstAttribute="top" secondItem="P3d-WT-tDv" secondAttribute="top" id="djv-pt-xXN"/>
                             <constraint firstAttribute="bottom" secondItem="Epu-ad-mYI" secondAttribute="bottom" id="i7e-K4-r0T"/>
                         </constraints>
                     </view>
@@ -537,6 +562,7 @@
                         <outlet property="emailView_width" destination="Zns-md-Mzt" id="L2N-7j-a07"/>
                         <outlet property="femaleGenderButton" destination="9Lq-CD-Tlz" id="NZu-ol-0VC"/>
                         <outlet property="firstNameTextField" destination="CWr-6l-7oW" id="wBm-xx-gfp"/>
+                        <outlet property="footerView" destination="Epu-ad-mYI" id="mEx-k2-HiA"/>
                         <outlet property="fullnameContinueButton" destination="6Q8-ua-FJD" id="0kn-va-PPp"/>
                         <outlet property="genderView_width" destination="iHm-jJ-aMY" id="Bzh-3C-CnE"/>
                         <outlet property="lastNameTextField" destination="KfB-hU-aNA" id="EjD-1F-Fvo"/>
@@ -545,6 +571,7 @@
                         <outlet property="passwordContinueButton" destination="q7J-iM-s2m" id="kNA-TV-oTf"/>
                         <outlet property="passwordTextField" destination="x03-vG-Do0" id="nT7-Ly-0Cz"/>
                         <outlet property="passwordView_width" destination="HpE-YQ-lgm" id="10u-eF-VKb"/>
+                        <outlet property="scrollView" destination="PpG-iD-IPL" id="LUB-be-75y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYr-rv-y5h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
