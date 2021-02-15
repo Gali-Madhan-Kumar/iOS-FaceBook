@@ -85,6 +85,11 @@ class RegisterVC: UIViewController {
         datePicker.addTarget(self, action: #selector(datePickerDidChange(_:)), for: .valueChanged)
         birthdayTextField.inputView = datePicker
         
+        // implementation of swipe gesture
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+        swipeGesture.direction = .right
+        self.view.addGestureRecognizer(swipeGesture)
+        
     }
     
     // executed once the Auto-Layout has been applied / executed
@@ -248,6 +253,25 @@ class RegisterVC: UIViewController {
         
         // hides the keyboard when the continune the button is clicked in the birthday page
         birthdayTextField.resignFirstResponder()
+        
+    }
+    
+    // called once swiped to the driection Right ->
+    @objc func handleGesture(_ swipe: UISwipeGestureRecognizer) {
+        
+        // getting the current position of the Scrollview (Horizontal Position)
+        let current_x = scrollView.contentOffset.x
+        
+        // getting the width of the screen (deduct this size)
+        let screen_width = self.view.frame.width
+        
+        // from current position of Scrollview, we comeback by width of the screen
+        let next_x = CGPoint(x: current_x - screen_width, y: 0)
+        
+        // ... until unless it is more than 0 (0 - 1st page)
+        if current_x > 0 {
+            scrollView.setContentOffset(next_x, animated: true)
+        }
         
     }
     
