@@ -275,7 +275,49 @@ class RegisterVC: UIViewController {
         
     }
     
-
+    // This function is executed whenever male / female button has been clicked
+    @IBAction func genderButton_clicked(_ sender: UIButton) {
+        
+        // STEP 1. declaring url of the request; declaring the body to the url; declaring the request with the safest method - POST, that no one can grab our info
+        let url = URL(string: "http://localhost:8080/fb/register.php")!
+        let body = "email=\(emailTextField.text!.lowercased())&firstName=\(firstNameTextField.text!.lowercased())&lastName=\(lastNameTextField.text!.lowercased())&password=\(passwordTextField.text!)&birthday=\(datePicker.date)&gender=\(sender.tag)"
+        var request = URLRequest(url: url)
+        request.httpBody = body.data(using: .utf8)
+        request.httpMethod = "POST"
+        
+        // STEP 2. Execute created above request
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            let helper = Helper()
+            
+            // error
+            if error != nil {
+                helper.showAlert(title: "Server Error", message: error!.localizedDescription, from: self)
+                return
+            }
+            
+            // fetch JSON if no error
+            do {
+                
+                // save mode of casting data
+                guard let data = data else {
+                    helper.showAlert(title: "Data Error", message: error!.localizedDescription, from: self)
+                    return
+                }
+                
+                // fetching all JSON received from the server
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+                print(json)
+                
+            // error while fetching JSON
+            } catch {
+                helper.showAlert(title: "JSON Error", message: error.localizedDescription, from: self)
+            }
+            
+        }.resume()
+        
+    }
+    
     // executed once any CANCEL (DISMISSING) button has been pressed
     @IBAction func cancelButton_clicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

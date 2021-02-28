@@ -388,19 +388,25 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpb-KR-bV7">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpb-KR-bV7">
                                                         <rect key="frame" x="232" y="312" width="100" height="107"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="xpb-KR-bV7" secondAttribute="height" multiplier="100:107" id="DI1-Jk-acP"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="Male"/>
+                                                        <connections>
+                                                            <action selector="genderButton_clicked:" destination="DGp-zG-4Xc" eventType="touchUpInside" id="4N5-sb-9vy"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lq-CD-Tlz">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lq-CD-Tlz">
                                                         <rect key="frame" x="82" y="312" width="100" height="107"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="9Lq-CD-Tlz" secondAttribute="height" multiplier="100:107" id="TXa-PF-qla"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="Female"/>
+                                                        <connections>
+                                                            <action selector="genderButton_clicked:" destination="DGp-zG-4Xc" eventType="touchUpInside" id="uH6-I4-stl"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
