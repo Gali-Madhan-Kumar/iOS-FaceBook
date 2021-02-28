@@ -16,6 +16,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var rightLineView: UIView!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var handsImageView: UIImageView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     // Constraints obj
     @IBOutlet weak var coverImageView_top: NSLayoutConstraint!
@@ -186,6 +188,33 @@ class LoginVC: UIViewController {
         // rounded corners
         registerButton.layer.cornerRadius = 5
         registerButton.layer.masksToBounds = true
+        
+    }
+    
+    // called everytime when textfield gets changed
+    @IBAction func textFieldDidChange(_ sender: Any) {
+        
+        // enabling the login button if email and passwords are not empty
+        if emailTextField.text! != "" && passwordTextField.text! != "" {
+            loginButton.isEnabled = true
+        }
+        
+    }
+    
+    // executed when the login button is pressed
+    @IBAction func loginButton_clicked(_ sender: Any) {
+        
+        let helper = Helper()
+        
+        //1st Verification: if entered text in emailTextField doesn't match our expression/ rule show alert
+        if helper.isValid(email: emailTextField.text!) == false {
+            helper.showAlert(title: "Invalid Email", message: "Please Enter registered Email Address", in: self)
+            return
+            // 2nd Verification if password is lessthan 6 chars, then return do not execute further
+        } else if passwordTextField.text!.count < 6  {
+            helper.showAlert(title: "Invalid Password", message: "Password Must contain Atleast 6 characters", in: self)
+            return
+        }
         
     }
     

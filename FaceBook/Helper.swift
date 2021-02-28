@@ -28,13 +28,13 @@ class Helper {
     }
     
     // shwo alert message to the user
-    func showAlert(title: String, message: String, from: UIViewController) {
+    func showAlert(title: String, message: String, in vc: UIViewController) {
         
         // creating alertController; creating button to the alertController; assigning button to alertController; presenting alert controller 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(ok)
-        from.present(alert, animated: true, completion: nil)
+        vc.present(alert, animated: true, completion: nil)
         
     }
     
